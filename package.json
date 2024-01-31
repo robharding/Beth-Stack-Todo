@@ -1,0 +1,28 @@
+{
+  "name": "beth-stack",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "db:push": "bunx drizzle-kit push:sqlite",
+    "db:studio": "bunx drizzle-kit studio",
+    "dev": "concurrently \"bun run --watch src/index.tsx\" \"bun run tw:dev\"",
+    "tw": "bunx tailwindcss -i ./src/styles.css -o ./tailwind-gen/styles.css",
+    "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./tailwind-gen/styles.css --watch"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.20.13",
+    "typed-html": "^3.0.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/html": "^0.8.0",
+    "@libsql/client": "^0.4.3",
+    "concurrently": "^8.2.2",
+    "drizzle-orm": "^0.29.3",
+    "elysia": "^0.8.15",
+    "tailwindcss": "^3.4.1"
+  }
+}
